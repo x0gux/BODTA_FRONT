@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BODTA (Boardta)
 
-## Getting Started
+롱보드 씬이 넓어짐에 따라 다양한 연령대의 입문자가 늘어나고 있습니다. 하지만 현장의 강사들은 수동적인 예약 프로세스와 사생활 분리 불가, 그리고 상습적인 노쇼 문제로 인해 큰 피로도를 느끼고 있습니다. BODTA는 이러한 강습 현장의 비효율을 개선하고, 강사와 강습생 모두가 만족할 수 있는 시스템을 지향합니다.
 
-First, run the development server:
+## 기획 배경 및 문제 정의
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+현재의 강습 신청은 구글이나 네이버 폼을 통해 접수된 후, 강사가 일일이 개인 메신저로 연락하여 일정을 조율하는 방식으로 이루어집니다. 이 과정에서 강사는 개인 연락처에 수십 명의 강습생 데이터가 뒤섞이는 불편을 겪으며, 폼 확인과 스케줄 등록에 과도한 행정 리소스를 소모합니다. 무엇보다 연락 두절이나 갑작스러운 노쇼는 강사의 시간적 손실뿐 아니라 심리적 허탈감을 유발합니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<div align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <div style="flex: 1; text-align: center;">
+  <img width="45%" alt="Image" src="https://github.com/user-attachments/assets/1c27a754-586b-4f08-89b7-6589a2ba470d" />
+  <img width="45%" alt="Image" src="https://github.com/user-attachments/assets/1c004314-9095-4a0e-9bc1-bc510f428041" />
+  <br>
+  <em>강습 현장과 노쇼 상황의 극명한 차이</em>
+  </div>
+</div>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+위의 비교 사진에서 볼 수 있듯, 정상적인 강습과 노쇼 상황의 차이는 강사의 자존감 문제로 직결됩니다. BODTA는 이러한 감정 노동을 최소화하고 강습 본연의 가치에 집중할 수 있는 환경을 만들고자 합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 핵심 서비스 기능
 
-## Learn More
+**스마트 예약 및 스케줄링**
+강습생은 강사의 실시간 캘린더를 확인하여 비어있는 슬롯에 즉시 예약을 확정할 수 있습니다. 기존의 '제출 후 대기' 방식이 아닌 강사의 개인 일정과 동기화된 시스템을 통해 예약의 편의성을 높였습니다.
 
-To learn more about Next.js, take a look at the following resources:
+**알림 시스템 및 통합 관리**
+우천 취소나 일정 변경 같은 돌발 상황 발생 시, 개별 메시지를 보낼 필요 없이 시스템 내에서 일괄 공지가 가능합니다. 또한 강습 전 자동 알림 발송을 통해 노쇼 발생 가능성을 사전에 차단합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**강습 히스토리 및 피드백 기록**
+롱보드는 자신의 자세를 직접 보며 교정하는 것이 효과적입니다. 강사가 촬영한 피드백 영상을 서비스에 기록하여 강습생이 자신의 성장을 시각적으로 확인하게 합니다. 이는 강습생에게는 지속적인 동기를 부여하고, 강사에게는 전문적인 관리 데이터를 제공합니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 기대 효과
 
-## Deploy on Vercel
+**강사 측면**에서는 업무 피로도가 최소화됩니다. 개인 사생활과 업무 공간이 분리되며, 행정 업무에 들던 시간을 강습 준비에 온전히 쏟을 수 있습니다. 유연한 일정 관리와 노쇼 방지 시스템은 안정적인 강습 운영을 돕습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**강습생 측면**에서는 사용자 경험이 개선됩니다. 강사와 연락이 닿을 때까지 기다릴 필요 없이 즉시 예약이 가능하며, 축적된 피드백 영상을 통해 자신의 실력 향상을 체감할 수 있습니다. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**운영 관점**에서도 파편화된 정보를 통합하여 소통 비용을 줄이고, 태도가 불량한 이용자를 필터링하여 강습의 전체적인 질을 높일 수 있는 기반이 마련됩니다.
