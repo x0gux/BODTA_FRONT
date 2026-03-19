@@ -1,6 +1,22 @@
+
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('/font/PretendardVariable.ttf') format('truetype');
+}
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,6 +61,23 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  --font-pretendard: "Pretendard", sans-serif;
+  --text-h1: 50px;
+  --text-h1--line-height: normal;
+  --text-h2: 20px;
+  --text-h2--line-height: normal;
+  --text-h3: 18px;
+  --text-h3--line-height: normal;
+  --text-body: 16px;
+  --text-body--line-height: normal;
+  --text-caption: 11px;
+  --text-caption--line-height: normal;
+  --font-weight-thin: 200;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 900;
 }
 
 :root {
