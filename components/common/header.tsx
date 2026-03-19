@@ -4,7 +4,7 @@ import logo from "@/public/svg/logo_white.svg";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-black dark:bg-black">
+    <header className="fixed top-0 z-50 w-full border-b bg-black dark:bg-black">
       <div className="container mx-auto flex h-28 items-center justify-between px-24">
         
         <Link href="/" className="text-xl font-bold tracking-tighter">

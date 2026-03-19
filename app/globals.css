@@ -63,7 +63,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   --font-pretendard: "Pretendard", sans-serif;
-  --text-h1: 50px;
+  --text-h1: 24px;
   --text-h1--line-height: normal;
   --text-h2: 20px;
   --text-h2--line-height: normal;
@@ -87,7 +87,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklab(0.8 -0.15 0.05);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);

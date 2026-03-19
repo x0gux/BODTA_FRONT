@@ -1,9 +1,9 @@
-import Header from "@/components/common/header";
+import Main from "@/components/pages/main/main"
 
 export default function Home() {
   return (
-    <div>
-      <Header/>
+    <div className="flex justify-center items-center">
+      <Main/>
     </div>
   );
 }
