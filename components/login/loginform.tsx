@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import {
   Select,
   SelectContent,
@@ -16,6 +17,7 @@ const LoginForm = () => {
     const [emailId, setEmailId] = useState("");
     const [emailDomain, setEmailDomain] = useState("");
     const [isCustomDomain, setIsCustomDomain] = useState(true);
+    const router = useRouter();
 
     return (
         <div className="w-[640px] flex flex-col items-center">
@@ -106,7 +108,7 @@ const LoginForm = () => {
 
             <div className="mt-[29px] flex gap-[8px] items-center font-pretendard text-h2 font-thin tracking-[-1px]">
                 <span className="text-[#222]">아직 회원이 아니라면?</span>
-                <Button variant="link" className="text-[#36dc9a] font-pretendard text-h2 font-thin tracking-[-1px] hover:no-underline p-0 h-auto">회원가입하러 가기</Button>
+                <Button variant="link" className="text-[#36dc9a] font-pretendard text-h2 font-thin tracking-[-1px] hover:no-underline p-0 h-auto" onClick={ ()=> {router.push("/signup")}}>회원가입하러 가기</Button>
             </div>
         </div>
     );
