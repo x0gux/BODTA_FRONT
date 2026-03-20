@@ -4,11 +4,11 @@ import logo from "@/public/svg/logo_white.svg";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-black dark:bg-black">
+    <div className="fixed top-0 z-100 w-full bg-black dark:bg-black">
       <div className="container mx-auto flex h-28 items-center justify-between px-24">
         
         <Link href="/" className="text-xl font-bold tracking-tighter">
-          <Image src={logo} alt="Logo" width={100} height={100} className="w-[20%] h-auto" priority />
+          <Image src={logo} alt="Logo" width={100} height={100} className="w-[8vw] h-auto" priority />
         </Link>
 
         
@@ -25,7 +25,7 @@ const Header = () => {
           </Link>
         </nav>
       </div>
-    </header>
+    </div>
   );
 };
 
