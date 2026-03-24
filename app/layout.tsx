@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/common/header";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
   title: "BODTA",
@@ -15,9 +16,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full antialiased font-pretendard">
       <body className="min-h-full flex flex-col">
-        <Header/>
-        {children}
+        <AuthProvider>
+          <Header/>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
 }
+
