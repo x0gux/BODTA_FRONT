@@ -24,7 +24,7 @@ const CalendarPage = () => {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 max-w-[2000px] mx-auto w-full grow">
         <CalendarGrid today={today} date={date} onSelect={setDate} fullDates={fullDates} />
 
-        <div className="lg:flex-1 w-full lg:max-w-[360px] flex flex-col shrink-0 gap-10 pt-24">
+        <div className="lg:flex-[1.5] w-full lg:max-w-[480px] flex flex-col shrink-0 gap-10 pt-24">
           <InstructorCard hook={instructorHook} />
           <ScheduleCard selectedDate={date} />
         </div>

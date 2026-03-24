@@ -24,12 +24,12 @@ export function InstructorCard({ hook }: InstructorCardProps) {
   return (
     <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
       <DialogTrigger asChild>
-        <div className="border-[1.5px] border-[#36dc9a] bg-white rounded-[24px] p-10 flex flex-col items-center justify-center relative shadow-lg h-fit cursor-pointer hover:scale-[1.02] transition-transform group">
+        <div className="border-[1.5px] border-[#36dc9a] bg-white rounded-[24px] p-10 flex flex-col items-center justify-center relative h-fit cursor-pointer hover:scale-[1.02] transition-transform group">
           <div className="font-medium text-gray-500 text-[16px] tracking-tight mb-4 group-hover:text-[#36dc9a] transition-colors">
             {selectedInstructor.team}
           </div>
           <div className="flex items-baseline gap-2 mb-6">
-            <span className="text-[#36dc9a] text-[56px] font-black leading-none italic">
+            <span className="text-[#36dc9a] text-[56px] font-black leading-none">
               {selectedInstructor.name}
             </span>
             <span className="text-[26px] font-bold text-gray-800">강사</span>
