@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { EmailInput } from "@/components/common/EmailInput";
 import { logIn } from "@/lib/auth";
 import { useAuth } from "@/context/AuthContext";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const LoginForm = () => {
     const router = useRouter();
@@ -19,6 +20,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const handleLogin = async () => {
         setErrorMsg("");
@@ -33,7 +35,7 @@ const LoginForm = () => {
             setIsLoading(true);
             const user = await logIn(fullEmail, password);
             setUser(user);
-            router.push("/");
+            setShowSuccessModal(true);
         } catch (err: any) {
             setErrorMsg(err.message || "로그인 중 오류가 발생했습니다.");
         } finally {
@@ -95,6 +97,25 @@ const LoginForm = () => {
                 <span className="text-[#222]">아직 회원이 아니라면?</span>
                 <Button variant="link" className="text-[#36dc9a] font-pretendard text-h2 font-thin tracking-[-1px] hover:no-underline p-0 h-auto cursor-pointer" onClick={() => { router.push("/signup") }}>회원가입하러 가기</Button>
             </div>
+
+            <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
+                <DialogContent showCloseButton={false} className="sm:max-w-md py-10 flex flex-col items-center justify-center">
+                    <DialogHeader>
+                        <DialogTitle className="text-center text-[28px] font-pretendard font-semibold tracking-[-1.4px] pt-4">로그인 성공!</DialogTitle>
+                        <DialogDescription className="text-center font-pretendard text-body tracking-[-0.8px] leading-[24px] pt-2 text-[#222]">
+                            BODTA에 오신 것을 환영합니다.
+                        </DialogDescription>
+                    </DialogHeader>
+                    
+                        <Button
+                            type="button"
+                            onClick={() => router.push("/")}
+                            className="bg-[#36dc9a] hover:bg-[#36dc9a]/90 text-white font-pretendard text-h1 font-semibold tracking-[-1.2px] rounded-[12px] h-[68px] w-full"
+                        >
+                            홈으로 가기
+                        </Button>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };

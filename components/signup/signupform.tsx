@@ -8,6 +8,7 @@ import { EmailInput } from "@/components/common/EmailInput";
 import { useRouter } from "next/navigation";
 import { signUp } from "@/lib/auth";
 import { useAuth } from "@/context/AuthContext";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export default function SignupForm() {
   const router = useRouter();
@@ -20,6 +21,7 @@ export default function SignupForm() {
   const [isCustomDomain, setIsCustomDomain] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleSignup = async () => {
     setErrorMsg("");
@@ -34,7 +36,7 @@ export default function SignupForm() {
       setIsLoading(true);
       const user = await signUp(fullEmail, password, name);
       setUser(user);
-      router.push("/");
+      setShowSuccessModal(true);
     } catch (err: any) {
       setErrorMsg(err.message || "회원가입 중 오류가 발생했습니다.");
     } finally {
@@ -111,6 +113,26 @@ export default function SignupForm() {
           {isLoading ? "진행 중..." : "가입완료"}
         </Button>
       </div>
+
+      <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
+        <DialogContent showCloseButton={false} className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center text-[28px] font-pretendard font-semibold tracking-[-1.4px] pt-4">회원가입 완료!</DialogTitle>
+            <DialogDescription className="text-center font-pretendard text-body tracking-[-0.8px] leading-[24px] pt-2 text-[#222]">
+              BODTA에 오신 것을 환영합니다.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="sm:justify-center mt-6 p-0 bg-transparent flex gap-4 w-full">
+            <Button
+              type="button"
+              onClick={() => router.push("/")}
+              className="bg-[#36dc9a] hover:bg-[#36dc9a]/90 text-white font-pretendard text-h1 font-semibold tracking-[-1.2px] rounded-[12px] h-[68px] w-full"
+            >
+              홈으로 가기
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
