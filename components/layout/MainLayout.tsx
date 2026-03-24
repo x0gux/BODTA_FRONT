@@ -1,7 +1,6 @@
-
 import { NavigationBox, Buttonbox } from "@/components/main";
 
-const Main = () => {
+const MainLayout = () => {
     return (
         <div className="w-full h-screen flex flex-col justify-center items-start px-36">
             <NavigationBox/>
@@ -10,4 +9,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default MainLayout;

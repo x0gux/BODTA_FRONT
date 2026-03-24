@@ -1,11 +1,5 @@
-import Login from "@/pages/login/login";
+import LoginLayout from "@/components/layout/LoginLayout";
 
-const LoginPage = () => {
-    return (
-        <div>
-           <Login/>
-        </div>
-    )
+export default function LoginPage() {
+  return <LoginLayout />;
 }
-
-export default LoginPage;

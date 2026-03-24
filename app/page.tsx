@@ -1,9 +1,5 @@
-import Main from "@/pages/main/main"
+import MainLayout from "@/components/layout/MainLayout";
 
 export default function Home() {
-  return (
-    <div className="flex justify-center items-center">
-      <Main/>
-    </div>
-  );
+  return <MainLayout />;
 }

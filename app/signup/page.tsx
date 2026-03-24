@@ -1,11 +1,5 @@
-import Signup from "@/pages/signup/signup"
+import SignupLayout from "@/components/layout/SignupLayout";
 
-const SignupPage = () => {
-    return (
-        <div className="flex justify-center items-center">
-           <Signup/>
-        </div>
-    )
+export default function SignupPage() {
+  return <SignupLayout />;
 }
-
-export default SignupPage;

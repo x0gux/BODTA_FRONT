@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { useInstructor } from "@/components/calender/useInstructor";
+import { useInstructor } from "@/hooks/useInstructor";
 
 interface InstructorCardProps {
   hook: ReturnType<typeof useInstructor>;

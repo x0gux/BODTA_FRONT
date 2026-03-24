@@ -108,7 +108,7 @@ const LoginForm = () => {
 
             <div className="mt-[29px] flex gap-[8px] items-center font-pretendard text-h2 font-thin tracking-[-1px]">
                 <span className="text-[#222]">아직 회원이 아니라면?</span>
-                <Button variant="link" className="text-[#36dc9a] font-pretendard text-h2 font-thin tracking-[-1px] hover:no-underline p-0 h-auto" onClick={ ()=> {router.push("/signup")}}>회원가입하러 가기</Button>
+                <Button variant="link" className="text-[#36dc9a] font-pretendard text-h2 font-thin tracking-[-1px] hover:no-underline p-0 h-auto cursor-pointer" onClick={ ()=> {router.push("/signup")}}>회원가입하러 가기</Button>
             </div>
         </div>
     );

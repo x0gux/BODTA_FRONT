@@ -1,7 +1,7 @@
 import Background from "@/components/signup/background";
 import SignupForm from "@/components/signup/signupform";
 
-const Signup = () => {
+const SignupLayout = () => {
     return (
         <div className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 z-0">
@@ -14,4 +14,4 @@ const Signup = () => {
     )
 }
 
-export default Signup;
+export default SignupLayout;

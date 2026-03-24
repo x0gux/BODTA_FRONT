@@ -1,7 +1,7 @@
 import Background from "@/components/login/background";
 import LoginForm from "@/components/login/loginform";
 
-const Login = () => {
+const LoginLayout = () => {
     return (
         <div className="relative w-full h-screen bg-black">
             <div className="absolute inset-0 z-0">
@@ -14,4 +14,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default LoginLayout;
