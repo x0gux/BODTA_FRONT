@@ -47,3 +47,33 @@ export async function logIn(email: string, password: string): Promise<User> {
 
   return data as User;
 }
+
+
+export async function TeacherUp(id: number) {
+  const { data, error } = await supabase
+    .from("user")
+    .update({ role: "teacher" })
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error || !data) {
+    throw new Error(error?.message ?? "강사 신청에 실패했습니다.");
+  }
+
+  return data;
+}
+
+export async function GetId(name : string) {
+  const { data, error } = await supabase
+    .from("user")
+    .select("id")
+    .eq("name", name)
+    .single();
+
+  if (error || !data) {
+    throw new Error(error?.message ?? "사용자를 찾을 수 없습니다.");
+  }
+
+  return Number(data.id);
+}

@@ -1,5 +1,7 @@
 import SignupLayout from "@/components/layout/SignupLayout";
 
-export default function SignupPage() {
+const SignupPage = () => {
   return <SignupLayout />;
 }
+
+export default SignupPage;

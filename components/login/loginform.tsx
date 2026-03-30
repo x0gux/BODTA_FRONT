@@ -36,6 +36,7 @@ const LoginForm = () => {
             const user = await logIn(fullEmail, password);
             setUser(user);
             setShowSuccessModal(true);
+            localStorage.setItem("username",user.name);
         } catch (err: any) {
             setErrorMsg(err.message || "로그인 중 오류가 발생했습니다.");
         } finally {

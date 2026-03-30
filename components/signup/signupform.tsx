@@ -10,7 +10,7 @@ import { signUp } from "@/lib/auth";
 import { useAuth } from "@/context/AuthContext";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
-export default function SignupForm() {
+const SignupForm = () => {
   const router = useRouter();
   const { setUser } = useAuth();
   
@@ -136,3 +136,5 @@ export default function SignupForm() {
     </div>
   );
 }
+
+export default SignupForm;

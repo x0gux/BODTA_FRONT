@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/svg/logo_white.svg";
 import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const { user, logout } = useAuth();
+  const router = useRouter();
 
   return (
     <div className="fixed top-0 z-100 w-full bg-black dark:bg-black">
@@ -25,7 +27,7 @@ const Header = () => {
           </Link>
 
           {user ? (
-            <button onClick={logout} className="font-pretendard text-h2 font-semibold text-[#36dc9a] cursor-pointer flex">
+            <button onClick={() => {router.push("/mypage")}} className="font-pretendard text-h2 font-semibold text-[#36dc9a] cursor-pointer flex">
               {user.name}<p className="text-white">님</p>
             </button>
           ) : (

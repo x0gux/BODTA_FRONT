@@ -1,5 +1,7 @@
 import LoginLayout from "@/components/layout/LoginLayout";
 
-export default function LoginPage() {
+const LoginPage = () => {
   return <LoginLayout />;
 }
+
+export default LoginPage;
